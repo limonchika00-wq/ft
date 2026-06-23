@@ -84,3 +84,98 @@ function odoslatFormular(event) {
 
     event.target.reset();
 }
+function searchCitaty() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const quotes = document.getElementsByClassName("quote-item");
+
+    for (let i = 0; i < quotes.length; i++) {
+        const text = quotes[i].innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            quotes[i].style.display = "block";
+        } else {
+            quotes[i].style.display = "none";
+        }
+    }
+}
+let citaty = [
+    "Nikdy sa nevzdávaj.",
+    "Každý deň je nová príležitosť.",
+    "Ver si a dokážeš veľké veci.",
+    "Úspech začína prvým krokom.",
+    "Sny sa plnia tým, ktorí na nich pracujú.",
+    "Buď lepší ako včera.",
+    "Každá chyba je nová skúsenosť.",
+    "Trpezlivosť prináša výsledky.",
+    "Aj malý krok je pokrok.",
+    "Odvaha je začiatok úspechu.",
+    "Usmievaj sa na život.",
+    "Nikdy nie je neskoro začať.",
+    "Ver svojim schopnostiam.",
+    "Nevzdávaj sa po prvom neúspechu.",
+    "Každý deň sa môžeš zlepšiť.",
+    "Tvrdá práca sa vyplatí.",
+    "Pozitívne myslenie mení svet.",
+    "Úspech patrí vytrvalým.",
+    "Dnes je dobrý deň na nový začiatok.",
+    "Rob to, čo ťa robí šťastným.",
+    "Všetko je možné.",
+    "Každý úspech začína rozhodnutím.",
+    "Buď sám sebou.",
+    "Život patrí odvážnym.",
+    "Nájdi silu v sebe.",
+    "Ver svojej ceste.",
+    "Každá výzva ťa posúva vpred.",
+    "Nestrácaj nádej.",
+    "Mysli pozitívne.",
+    "Úsmev je sila.",
+    "Každý deň má svoj význam.",
+    "Buď trpezlivý.",
+    "Nezastavuj sa.",
+    "Využi svoj potenciál.",
+    "Úspech nie je náhoda.",
+    "Nikdy neprestaň snívať.",
+    "Dôležité je pokračovať.",
+    "Si silnejší, než si myslíš.",
+    "Každý cieľ je dosiahnuteľný.",
+    "Ver v lepšie zajtrajšky."
+];
+
+
+function searchCitaty() {
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let resultsBox = document.getElementById("searchResultsBox");
+    let results = document.getElementById("searchResults");
+
+    results.innerHTML = "";
+
+    if (input === "") {
+        resultsBox.style.display = "none";
+        return;
+    }
+
+    let found = false;
+
+    for (let i = 0; i < citaty.length; i++) {
+
+        if (citaty[i].toLowerCase().includes(input)) {
+
+            results.innerHTML += `
+                <div class="card p-2 m-2">
+                    <p class="citat">"${citaty[i]}"</p>
+                </div>
+            `;
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        results.innerHTML = `
+            <p class="text">Žiadne citáty sa nenašli.</p>
+        `;
+    }
+
+    resultsBox.style.display = "block";
+}
