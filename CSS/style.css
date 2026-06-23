@@ -1,0 +1,70 @@
+body {
+    background-color: #F7F0FF;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.nadpis {
+    color: #7B5EA7;
+    font-size: 36px;
+}
+
+.podnadpis {
+    color: #9B7EBD;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.text {
+    color: #555555;
+    font-size: 18px;
+}
+
+.popis {
+    color: #777777;
+    font-size: 16px;
+    font-family: Georgia, serif;
+}
+
+.citat {
+    color: #9B7EBD;
+    font-size: 28px;
+    font-family: Georgia, serif;
+}
+
+.odkaz {
+    color: #7B5EA7;
+}
+
+.formular {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.formular label {
+    font-weight: bold;
+    color: #555555;
+}
+.mojeTlacidlo {
+    background-color: #DCCEF7;
+    color: #7B5EA7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.mojeTlacidlo {
+    background-color: #DCCEF7;
+    color: #7B5EA7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.mojeTlacidlo:hover {
+    background-color: #d2c0f5;
+    color: #7B5EA7;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <title>Generátor citátov</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="nadpis mt-4">Generátor citátov</h1>
+
+    <p>
+        <a class="odkaz" href="oprojekte.html">
+            Vitajte na mojej stránke!
+        </a>
+    </p>
+
+    <!-- CITAT DŇA -->
+    <div class="card p-4 m-3">
+
+        <h2 class="podnadpis">
+            <i class="bi bi-chat-quote-fill"></i>
+            Citát dňa
+        </h2>
+
+        <p class="citat" id="citat">
+            "Nikdy sa nevzdávaj."
+        </p>
+
+        <button class="mojeTlacidlo" onclick="novyCitat()">
+            <i class="bi bi-arrow-repeat"></i>
+            Nový citát
+        </button>
+
+    </div>
+
+    <!-- PREČO -->
+    <div class="card p-4 m-3">
+
+        <h2 class="podnadpis">Prečo čítať citáty?</h2>
+
+        <p class="text">
+            Citáty nám môžu priniesť motiváciu,
+            nové myšlienky a pozitívnu energiu.
+        </p>
+
+    </div>
+
+    <!-- HEADER + BUTTON CENTERED -->
+    <div class="text-center mt-4">
+
+        <h2 class="podnadpis">
+            <i class="bi bi-star-fill"></i>
+            Najobľúbenejšie citáty používateľov
+        </h2>
+
+        <button class="mojeTlacidlo mt-2" onclick="toggleCitaty()" id="toggleBtn">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+
+    </div>
+
+    <!-- HIDDEN CONTENT -->
+    <div id="oblubeneCitaty">
+
+        <div class="row mt-3">
+
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <p class="citat">"Každý deň je nová príležitosť."</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <p class="citat">"Úspech začína prvým krokom."</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <p class="citat">"Ver si viac ako svojim pochybnostiam."</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+        <a href="formular.html" class="mojeTlacidlo text-decoration-none">
+            <i class="bi bi-pencil-square"></i>
+            Podeľte sa o svoj obľúbený citát
+        </a>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
