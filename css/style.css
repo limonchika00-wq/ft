@@ -68,3 +68,14 @@ body {
     background-color: #d2c0f5;
     color: #7B5EA7;
 }
+.mojeTlacidlo {
+    background-color: #DCCEF7;
+    color: #7B5EA7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px;
+}

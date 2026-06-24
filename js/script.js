@@ -225,17 +225,16 @@ function ulozCitat(text) {
         document.getElementById("oblubeneContainer");
 
     container.innerHTML += `
+    <div class="col-md-4 mb-4">
 
-    <div class="col-md-4">
-
-        <div class="card p-3 h-100">
+        <div class="card p-3 h-100 d-flex flex-column">
 
             <p class="citat">
                 "${text}"
             </p>
 
             <button
-                class="mojeTlacidlo mt-2"
+                class="mojeTlacidlo mt-auto"
                 onclick="odstranitCitat(this, '${text}')">
 
                 <i class="bi bi-heartbreak-fill"></i>
@@ -246,7 +245,6 @@ function ulozCitat(text) {
         </div>
 
     </div>
-
 `;
 }
 
