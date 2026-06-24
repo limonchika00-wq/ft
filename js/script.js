@@ -162,10 +162,21 @@ function searchCitaty() {
         if (citaty[i].toLowerCase().includes(input)) {
 
             results.innerHTML += `
-                <div class="card p-2 m-2">
-                    <p class="citat">"${citaty[i]}"</p>
-                </div>
-            `;
+    <div class="card p-2 m-2">
+
+        <p class="citat">"${citaty[i]}"</p>
+
+        <button
+            class="mojeTlacidlo mt-2"
+            onclick="pridatKonkretnyCitat('${citaty[i]}')">
+
+            <i class="bi bi-heart-fill"></i>
+            Páči sa mi
+
+        </button>
+
+    </div>
+`;
 
             found = true;
         }
@@ -178,4 +189,87 @@ function searchCitaty() {
     }
 
     resultsBox.style.display = "block";
+}
+let oblubeneCitaty = [];
+
+function pridatOblubeny() {
+
+    let text = document.getElementById("citat")
+        .innerText
+        .replace(/"/g, "");
+
+    ulozCitat(text);
+}
+
+function pridatKonkretnyCitat(text) {
+
+    ulozCitat(text);
+}
+function odstranitCitat(btn, text) {
+
+    oblubeneCitaty =
+        oblubeneCitaty.filter(citat => citat !== text);
+
+    btn.closest(".col-md-4").remove();
+}
+
+function ulozCitat(text) {
+
+    if (oblubeneCitaty.includes(text)) {
+        return;
+    }
+
+    oblubeneCitaty.push(text);
+
+    let container =
+        document.getElementById("oblubeneContainer");
+
+    container.innerHTML += `
+
+    <div class="col-md-4">
+
+        <div class="card p-3 h-100">
+
+            <p class="citat">
+                "${text}"
+            </p>
+
+            <button
+                class="mojeTlacidlo mt-2"
+                onclick="odstranitCitat(this, '${text}')">
+
+                <i class="bi bi-heartbreak-fill"></i>
+                Odstrániť
+
+            </button>
+
+        </div>
+
+    </div>
+
+`;
+}
+
+function toggleOblubene() {
+
+    const sekcia =
+        document.getElementById("oblubenePouzivatela");
+
+    const btn =
+        document.getElementById("toggleOblubeneBtn");
+
+    if (sekcia.style.display === "none") {
+
+        sekcia.style.display = "block";
+
+        btn.innerHTML =
+            '<i class="bi bi-chevron-up"></i>';
+
+    } else {
+
+        sekcia.style.display = "none";
+
+        btn.innerHTML =
+            '<i class="bi bi-chevron-down"></i>';
+    }
 }

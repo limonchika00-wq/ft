@@ -32,6 +32,11 @@
         <p class="citat" id="citat">
             "Nikdy sa nevzdávaj."
         </p>
+        <button class="mojeTlacidlo mt-2"
+        onclick="pridatOblubeny()">
+    <i class="bi bi-heart-fill"></i>
+    Páči sa mi
+</button>
 
         <button class="mojeTlacidlo" onclick="novyCitat()">
             <i class="bi bi-arrow-repeat"></i>
@@ -100,27 +105,90 @@
 
         <div class="row mt-3">
 
-            <div class="col-md-4">
-                <div class="card p-3 h-100">
-                    <p class="citat">"Každý deň je nová príležitosť."</p>
-                </div>
-            </div>
+            <div class="row mt-3">
 
-            <div class="col-md-4">
-                <div class="card p-3 h-100">
-                    <p class="citat">"Úspech začína prvým krokom."</p>
-                </div>
-            </div>
+    <div class="col-md-4">
+        <div class="card p-3 h-100">
 
-            <div class="col-md-4">
-                <div class="card p-3 h-100">
-                    <p class="citat">"Ver si viac ako svojim pochybnostiam."</p>
-                </div>
-            </div>
+            <p class="citat">
+                "Každý deň je nová príležitosť."
+            </p>
+
+            <button
+                class="mojeTlacidlo mt-2"
+                onclick="pridatKonkretnyCitat('Každý deň je nová príležitosť.')">
+
+                <i class="bi bi-heart-fill"></i>
+                Páči sa mi
+
+            </button>
 
         </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 h-100">
+
+            <p class="citat">
+                "Úspech začína prvým krokom."
+            </p>
+
+            <button
+                class="mojeTlacidlo mt-2"
+                onclick="pridatKonkretnyCitat('Úspech začína prvým krokom.')">
+
+                <i class="bi bi-heart-fill"></i>
+                Páči sa mi
+
+            </button>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 h-100">
+
+            <p class="citat">
+                "Ver si viac ako svojim pochybnostiam."
+            </p>
+
+            <button
+                class="mojeTlacidlo mt-2"
+                onclick="pridatKonkretnyCitat('Ver si viac ako svojim pochybnostiam.')">
+
+                <i class="bi bi-heart-fill"></i>
+                Páči sa mi
+
+            </button>
+
+        </div>
+    </div>
+
+</div>
+<div class="text-center mt-5">
+
+    <h2 class="podnadpis">
+        <i class="bi bi-heart-fill"></i>
+        Obľúbené citáty
+    </h2>
+
+    <button class="mojeTlacidlo mt-2"
+            onclick="toggleOblubene()"
+            id="toggleOblubeneBtn">
+
+        <i class="bi bi-chevron-up"></i>
+
+    </button>
+
+</div>
+
+<div id="oblubenePouzivatela">
+
+    <div class="row mt-3" id="oblubeneContainer">
 
     </div>
+
+</div>
 
     
     <div class="mt-4">
