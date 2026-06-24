@@ -198,3 +198,10 @@ body {
 .card {
     margin-bottom: 30px !important;
 }
+.citat {
+    color: #9B7EBD;
+    font-size: 28px;
+    font-family: Georgia, serif;
+
+    transition: all 0.3s ease;
+}

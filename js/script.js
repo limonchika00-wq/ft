@@ -1,5 +1,16 @@
 function novyCitat() {
+let element = document.getElementById("citat");
 
+element.style.opacity = "0";
+
+setTimeout(() => {
+
+    element.innerHTML =
+        '"' + citaty[nahodneCislo] + '"';
+
+    element.style.opacity = "1";
+
+}, 200);
     let citaty = [
 
         "Nikdy sa nevzdávaj.",
