@@ -201,7 +201,10 @@ function searchCitaty() {
 
     resultsBox.style.display = "block";
 }
-let oblubeneCitaty = [];
+let oblubeneCitaty =
+    JSON.parse(
+        localStorage.getItem("oblubeneCitaty")
+    ) || [];
 
 function pridatOblubeny() {
 
@@ -221,6 +224,11 @@ function odstranitCitat(btn, text) {
     oblubeneCitaty =
         oblubeneCitaty.filter(citat => citat !== text);
 
+        localStorage.setItem(
+    "oblubeneCitaty",
+    JSON.stringify(oblubeneCitaty)
+);
+
     btn.closest(".col-md-4").remove();
 }
 
@@ -232,13 +240,18 @@ function ulozCitat(text) {
 
     oblubeneCitaty.push(text);
 
+    localStorage.setItem(
+    "oblubeneCitaty",
+    JSON.stringify(oblubeneCitaty)
+);
+
     let container =
         document.getElementById("oblubeneContainer");
 
     container.innerHTML += `
     <div class="col-md-4 mb-4">
 
-        <div class="card p-3 h-100 d-flex flex-column">
+        <div class="card p-3 h-100 d-flex flex-column favorite-card">
 
             <p class="citat">
                 "${text}"
@@ -342,9 +355,15 @@ function toggleDarkMode() {
 
     document.body.classList.toggle("dark-mode");
 
+    const btn =
+        document.getElementById("themeBtn");
+
     if (
         document.body.classList.contains("dark-mode")
     ) {
+
+        btn.innerHTML =
+            '<i class="bi bi-sun-fill"></i> Svetlý režim';
 
         localStorage.setItem(
             "theme",
@@ -353,15 +372,20 @@ function toggleDarkMode() {
 
     } else {
 
+        btn.innerHTML =
+            '<i class="bi bi-moon-fill"></i> Tmavý režim';
+
         localStorage.setItem(
             "theme",
             "light"
         );
-
     }
 }
 
 window.addEventListener("load", () => {
+
+    const btn =
+        document.getElementById("themeBtn");
 
     if (
         localStorage.getItem("theme")
@@ -371,6 +395,59 @@ window.addEventListener("load", () => {
         document.body.classList.add(
             "dark-mode"
         );
-    }
 
+        if (btn) {
+
+            btn.innerHTML =
+                '<i class="bi bi-sun-fill"></i> Svetlý režim';
+        }
+
+    } else {
+
+        if (btn) {
+
+            btn.innerHTML =
+                '<i class="bi bi-moon-fill"></i> Tmavý režim';
+        }
+    }
 });
+
+function nacitajOblubene() {
+
+    let container =
+        document.getElementById("oblubeneContainer");
+
+    if (!container) return;
+
+    oblubeneCitaty.forEach(text => {
+
+        container.innerHTML += `
+
+        <div class="col-md-4">
+
+            <div class="card p-3 h-100 d-flex flex-column">
+
+                <p class="citat">
+                    "${text}"
+                </p>
+
+                <button
+                    class="mojeTlacidlo mt-auto"
+                    onclick="odstranitCitat(this, '${text}')">
+
+                    <i class="bi bi-heartbreak-fill"></i>
+                    Odstrániť
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+    });
+}
+window.addEventListener(
+    "load",
+    nacitajOblubene
+);

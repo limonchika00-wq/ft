@@ -162,6 +162,8 @@ body {
 
 .about-btn {
     display: inline-block;
+    outline: none;
+    border: none;
 
     background: linear-gradient(
         135deg,
@@ -284,4 +286,15 @@ body {
     background: #2b2b40;
     color: white;
     border-color: #444;
+}
+#oblubeneContainer .card {
+    height: 320px !important;
+}
+.about-btn:focus,
+.about-btn:active {
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
 }
