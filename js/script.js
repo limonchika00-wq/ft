@@ -282,3 +282,59 @@ function toggleOblubene() {
             '<i class="bi bi-chevron-down"></i>';
     }
 }
+window.onscroll = function () {
+
+    let btn =
+        document.getElementById("topBtn");
+
+    if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ) {
+
+        btn.style.display = "block";
+
+    } else {
+
+        btn.style.display = "none";
+
+    }
+};
+
+function scrollToTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+window.onscroll = function () {
+
+    let btn =
+        document.getElementById("topBtn");
+
+    if (!btn) return;
+
+    if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ) {
+
+        btn.style.display = "block";
+
+    } else {
+
+        btn.style.display = "none";
+
+    }
+};
+
+function scrollToTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
